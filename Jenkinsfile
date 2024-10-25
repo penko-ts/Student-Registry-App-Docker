@@ -26,13 +26,6 @@ pipeline {
                 // Add staging deployment logic here
             }
         }
-        stage('Approval for Production Deployment') {
-            steps {
-                script {
-                    input message: 'Approve deployment to production?', ok: 'Deploy'
-                }
-            }
-        }
         stage('Deploy to Production') {
             steps {
                 echo 'Deploying to Production'
