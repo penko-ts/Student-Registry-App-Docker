@@ -1,12 +1,17 @@
 pipeline {
    agent any
    stages {
-      stage('Test Message') {
+      stage('NPM install') {
          steps {
-            echo 'Hello World'
-         }
-      }     
-    }   
+            sh 'npm install'
+            }
+       stage('Execute test')  
+         steps {
+            sh 'npm run test'
+            }  
+        }
+    }     
 }   
+  
    
 
