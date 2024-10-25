@@ -5,13 +5,15 @@ pipeline {
          steps {
             sh 'npm install'
             }
-       stage('Execute test')  
+         }      
+       stage('Execute test') {
          steps {
             sh 'npm run test'
-            }  
-        }
-    }     
-}   
+            } 
+          } 
+       }
+}     
+   
   
    
 
