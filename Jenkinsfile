@@ -5,13 +5,20 @@ pipeline {
          steps {
             sh 'npm install'
             }
-         }      
-       stage('Execute test') {
+      }
+       parallel {
+       stage('Run npm audit tests') {
+         steps {
+            sh 'npm audit'
+            }
+          }
+        stage('Execute test') {
          steps {
             sh 'npm run test'
-            } 
+            }     
           } 
        }
+    }
 }     
    
   
